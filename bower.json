@@ -1,0 +1,22 @@
+{
+  "name": "svg-animation",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mikemjharris/svg-animation",
+  "authors": [
+    "mikemjharris <mike.mj.harris@gmail.com>"
+  ],
+  "description": "svg ani",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
