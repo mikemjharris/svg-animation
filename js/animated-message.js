@@ -39,7 +39,7 @@ function codeAString ( words ) {
   var result = "";
   for( var i = 0; i < words.length; i++ ){
     if( words.substr(i,1) === " "){
-      result += " ";
+      result += "1";
     } else {
       result += String.fromCharCode( 97  - ( words.substr(i,1).charCodeAt(0) - 90 ) ) ;
     }
@@ -48,7 +48,15 @@ function codeAString ( words ) {
 }
 
 function decodeAString ( words ) {
-  return codeAString(words);
+  var result = "";
+  for( var i = 0; i < words.length; i++ ){
+    if( words.substr(i,1) === "1"){
+      result += " ";
+    } else {
+      result += String.fromCharCode( 97  - ( words.substr(i,1).charCodeAt(0) - 90 ) ) ;
+    }
+  }
+  return result;
  }
 
 function createPath ( points ) {
@@ -147,12 +155,14 @@ function init () {
     window.location.href =  window.location.href   + '?message=' + codeAString(message);
   });
 
+  $('input:first').focus();
+
   var queryParams = getUrlVars();
 
   if( queryParams.message ) {
     createMeassgeFromString( decodeAString(queryParams.message));
     $('body').addClass('message');
-    $('#share').attr('href', 'https://twitter.com/intent/tweet?&text=My animated message ' + window.location.href);
+    $('#share').attr('href', 'https://twitter.com/intent/tweet?&text=My animated message ' + window.location.href.replace('%20','\%20'));
   } else {
     createSvg(letters, '#ebebeb');
   }

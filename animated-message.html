@@ -3,25 +3,26 @@
 <head>
   <title>SVG Alphabet</title>
   <link rel="icon"
-      type="image/png"
-      href="favicon.png">
+      href="IMG/ani_favicon.png">
 
-  <link rel="stylesheet" type="text/css" href="svg_ani.css">
+  <link rel="stylesheet" type="text/css" href="CSS/animated-message.css">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script type="text/javascript">
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-36647147-1']);
-_gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36647147-1']);
+    _gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-</script>
+  </script>
 </head>
 
 
@@ -40,12 +41,12 @@ _gaq.push(['_trackPageview']);
   </div>
 
   <div class='read-message'>
-    <a href="https://twitter.com/intent/tweet?&text=My animated message http://sirrahmh.co.uk/alphabet" id='share'>Share your message</a>
-    <a href="file:///Users/mikemjharris/working/svg/animated-message.html" id='create'>Create a message</a>
+    <a href="https://twitter.com/intent/tweet?&text=My animated message http://sirrahmh.co.uk/alphabet" id='share' target="_blank">Share your message</a>
+    <a href="http://www.sirrahmj.co.uk/animated-message.html" id='create'>Create a message</a>
   </div>
 
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="svg_ani.js"></script>
+  <script type="text/javascript" src="js/animated-message.js"></script>
 
 </body>
 </html>
