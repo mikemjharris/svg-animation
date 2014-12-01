@@ -38,17 +38,17 @@ var letters = [a,a,b,b,c,c,d,d,e,e,f,f,g,g,h,h,i,i,j,j,k,k,l,l,m,m,n,n,o,o,p,p,q
 function codeAString ( words ) {
   var result = "";
   for( var i = 0; i < words.length; i++ ){
-    result += String.fromCharCode( 97  - ( words.substr(i,1).charCodeAt(0) - 90 ) ) ;
+    if( words.substr(i,1) === " "){
+      result += " ";
+    } else {
+      result += String.fromCharCode( 97  - ( words.substr(i,1).charCodeAt(0) - 90 ) ) ;
+    }
   }
   return result;
 }
 
 function decodeAString ( words ) {
-  var result = "";
-  for( var i = 0; i < words.length; i++ ){
-    result += String.fromCharCode( 97 - ( words.substr(i,1).charCodeAt(0) - 90 ) );
-  }
-  return result;
+  return codeAString(words);
  }
 
 function createPath ( points ) {
@@ -152,6 +152,7 @@ function init () {
   if( queryParams.message ) {
     createMeassgeFromString( decodeAString(queryParams.message));
     $('body').addClass('message');
+    $('#share').attr('href', 'https://twitter.com/intent/tweet?&text=My animated message ' + window.location.href);
   } else {
     createSvg(letters, '#ebebeb');
   }
